@@ -13,7 +13,13 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 }
-
+tasks.register("author"){
+    val author: String by  project
+    val email: String by project
+    doLast {
+        println("Author: ${author}:${email}")
+    }
+}
 tasks.test {
     useJUnitPlatform()
 }
